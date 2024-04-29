@@ -1,44 +1,40 @@
+
 import './App.css';
+import Directory from './components/directory/directory.component';
 
 const App = () => {
-  return (
-    <div className='catagories-container'>
-      <div className="catagory-container">
-        {/*{<img/>}*/}
-        <div className="catagory-body-continer">
-          <h2>Hats</h2>
-          <p>Shop Now</p>
-        </div>
-      </div>
-      <div className="catagory-container">
-        {/*{<img/>}*/}
-        <div className="catagory-body-continer">
-          <h2>jackets</h2>
-          <p>Shop Now</p>
-        </div>
-      </div>
-      <div className="catagory-container">
-        {/*{<img/>}*/}
-        <div className="catagory-body-continer">
-          <h2>sneakers</h2>
-          <p>Shop Now</p>
-        </div>
-      </div>
-      <div className="catagory-container">
-        {/*{<img/>}*/}
-        <div className="catagory-body-continer">
-          <h2>womes</h2>
-          <p>Shop Now</p>
-        </div>
-      </div>
-      <div className="catagory-container">
-        {/*{<img/>}*/}
-        <div className="catagory-body-continer">
-          <h2>mens</h2>
-          <p>Shop Now</p>
-        </div>
-      </div>
+  const categories = [
+    {
+      "id": 1,
+      "title": "hats",
+      "imageUrl": "https://i.ibb.co/cvpntL1/hats.png"
+    },
+    {
+      "id": 2,
+      "title": "jackets",
+      "imageUrl": "https://i.ibb.co/px2tCc3/jackets.png"
+    },
+    {
+      "id": 3,
+      "title": "sneakers",
+      "imageUrl": "https://i.ibb.co/0jqHpnp/sneakers.png"
+    },
+    {
+      "id": 4,
+      "title": "womens",
+      "imageUrl": "https://i.ibb.co/GCCdy8t/womens.png"
+    },
+    {
+      "id": 5,
+      "title": "mens",
+      "imageUrl": "https://i.ibb.co/R70vBrQ/men.png"
+    }
+  ]
 
+
+  return (
+    <div className='categories-container'>
+      <Directory categories={categories} />;
     </div>
   );
 }
