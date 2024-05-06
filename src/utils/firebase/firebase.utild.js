@@ -1,5 +1,10 @@
 import { initializeApp } from 'firebase/app';
-
+import { 
+    getAuth, 
+    signInWithRedirect,
+    signInWithPopup,
+    GoogleAuthProvider,
+} from 'firebase/auth';
 
 const firebaseConfig = {
   apiKey: "AIzaSyDSXR0NcOSGWofJ_SSH8-rI2uw-gVS3XnM",
@@ -11,3 +16,13 @@ const firebaseConfig = {
 };
 
 const firebaseApp = initializeApp(firebaseConfig);
+
+const provider = new GoogleAuthProvider();
+
+provider.setCustomParameters({
+    prompt: "select-account"
+});
+
+export const auth = getAuth();
+
+export const signInWithGooglePopup = () => signInWithPopup(auth, provider);
